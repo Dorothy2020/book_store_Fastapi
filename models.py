@@ -1,12 +1,16 @@
-from pyndantic import models
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+
+
 
 
 class Book(BaseModel):
     __tablename__="books"
-    id:str
+    id:int
     title:str
-    pages:int
-    published_date:str
+    body:str
+    published_year:str
 
 
 
