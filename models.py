@@ -1,16 +1,14 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 
+class Book(Base):
+    __tablename__ = 'books'
 
-
-
-class Book(BaseModel):
-    __tablename__="books"
-    id:int
-    title:str
-    body:str
-    published_year:str
-
+    id = Column(Integer, primary_key=True)
+    title = Column(String)
+    author = Column(String)
 
 
